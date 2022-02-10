@@ -1,0 +1,12 @@
+PROJECT(operations)
+
+SET(OPERATIONS_SRCS operations.cpp)
+
+# shared library
+ADD_LIBRARY(operations SHARED ${OPERATIONS_SRCS})
+
+# static library
+ADD_LIBRARY(operations_static STATIC ${OPERATIONS_SRCS})
+SET_TARGET_PROPERTIES(operations_static PROPERTIES OUTPUT_NAME "operations")
+SET_TARGET_PROPERTIES(operations PROPERTIES CLEAN_DIRECT_OUTPUT 1)
+SET_TARGET_PROPERTIES(operations_static PROPERTIES CLEAN_DIRECT_OUTPUT 1)
